@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   campito.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcharfao <jcharfao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/28 02:03:43 by jcharfao          #+#    #+#             */
-/*   Updated: 2024/03/08 07:34:11 by jcharfao         ###   ########.fr       */
+/*   Created: 2024/03/08 03:23:52 by jcharfao          #+#    #+#             */
+/*   Updated: 2024/03/08 03:36:32 by jcharfao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-void ft_putchar(char c)
+int main()
 {
-    write(1, &c, 1);
-    
+    char *str = "holamundo";
+    int j = 0;
+    int i = strlen(str + 1);
+    char *new = malloc(strlen(str) + 1);
+    while (str[i] > 0)
+        new[j++] = str[i--];./
+    printf("%s\n", new);
 }
-/* int main()
-{
-    ft_putchar('s');
-} */
