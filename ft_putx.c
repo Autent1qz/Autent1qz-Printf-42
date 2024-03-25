@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putx.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcharfao <jcharfao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/08 07:50:14 by jcharfao          #+#    #+#             */
-/*   Updated: 2024/03/24 13:24:04 by jcharfao         ###   ########.fr       */
+/*   Created: 2024/03/16 11:55:21 by jcharfao          #+#    #+#             */
+/*   Updated: 2024/03/17 00:56:46 by jcharfao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar(char c, size_t *posi)
+void	ft_puthex_pf(unsigned int num, size_t *counter, char *base)
 {
-	write(1, &c, 1);
-	(*posi)++;
+	char	*str;
+
+	str = ft_aux_pf(num, base);
+	ft_putstr(str, counter);
+	free(str);
 }

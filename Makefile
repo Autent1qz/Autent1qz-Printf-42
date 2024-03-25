@@ -5,39 +5,40 @@
 #                                                     +:+ +:+         +:+      #
 #    By: jcharfao <jcharfao@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/02/25 01:01:04 by jcharfao          #+#    #+#              #
-#    Updated: 2024/02/28 07:47:13 by jcharfao         ###   ########.fr        #
+#    Created: 2024/03/16 12:06:30 by jcharfao          #+#    #+#              #
+#    Updated: 2024/03/16 12:25:53 by jcharfao         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libftprintf.a
+
+NAME	=	libftprintf.a
+
+SRC	=	ft_printf.c			\
+		ft_putchar.c		\
+		ft_putstr.c		\
+		ft_putnbr.c		\
+		ft_putuint.c		\
+		ft_putx.c		\
+		ft_auxfuns.c			\
+
+OBJS = $(SRC:.c=.o)
 
 CC = gcc
-
-FLAGS = -Wall -Werror -Wextra
-
+CFLAGS = -Wall -Werror -Wextra
 RM = rm -rf
-
 AR = ar crs
 
-SRC = ft_printf.c\
-ft_putchar.c\
-ft_putstr.c\
-ft_putnbr.c\
+$(NAME): $(OBJS)
+	$(AR) $(NAME) $(OBJS)
 
-OBJ = $(SRC:.c=.o)
-
-$(NAME): $(OBJ)
-		$(AR) $(NAME) $(OBJ)
-		
 all: $(NAME)
 
 clean:
-	$(RM) $(OBJ)
+	$(RM) $(OBJS)
 
-fclean: clean
-	$(RM) $(NAME)
+fclean:	clean
+	$(RM) $(NAME)		
 
-re: fclean all
+re:	fclean all
 
-.PHONY: all clean fclean re
+.PHONY:	all clean fclean re

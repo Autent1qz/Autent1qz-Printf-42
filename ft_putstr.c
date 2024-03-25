@@ -5,29 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcharfao <jcharfao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/28 03:40:14 by jcharfao          #+#    #+#             */
-/*   Updated: 2024/02/28 03:45:45 by jcharfao         ###   ########.fr       */
+/*   Created: 2024/03/08 07:54:33 by jcharfao          #+#    #+#             */
+/*   Updated: 2024/03/24 13:38:44 by jcharfao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void    ft_putstr(char *s)
+void	*ft_putstr(char *s, size_t *posi)
 {
-    size_t  i;
-    
-    i = 0;
-    if (s)
-    {
-        while (s[i])
-        {
-            write(1, &s[i], 1);
-            i++;
-        }
-    }
-}
-
-int main()
-{
-    ft_putstr("estoy bien high");
+	while (*s)
+	{
+		ft_putchar(*s, posi);
+		s++;
+	}
+	return (s);
 }
